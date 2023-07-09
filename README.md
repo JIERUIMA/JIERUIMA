@@ -1,10 +1,1 @@
-- 👋 Hi, I’m @JIERUIMA
-- 👀 I’m interested in NLP,VR,CV
-- 🌱 I’m currently learning machine learning
-- 💞️ I’m looking to collaborate on ...
-- 📫 How to reach me ...
-
-<!---
-JIERUIMA/JIERUIMA is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
-You can click the Preview link to take a look at your changes.
---->
+基礎的java script ， css 學習資料
