@@ -1,0 +1,545 @@
+# <font color='red'>DUKE</font>
+
+## <font color='orange'>Algorithms and Programming Concepts</font>
+
+### <font color='cornflowerblue'>Unfamiliar Words</font>
+
+implementation --> 实现   mechanic --> 技工  hood --> 罩  punctuation --> 标点
+
+execute --> 执行 hackers --> 黑客  interface --> 接口 界面  peek --> 偷看
+
+com up -->  向上 cryptography --> 密码学 concatenate --> 连接 precise --> 精确的
+
+instructions --> 指示  leap --> 飞跃 equations --> 方程 expertise --> 专门知识
+
+precise --> 精确 crucial --> 关键 ultimately --> 最终 momentarily --> 随时
+
+initializes --> 初始化 declaring --> 声明 lowercase --> 小写 somewhat --> 有点
+
+descriptively --> 描述性 respectively --> 依次地 break down --> 分解 失败 毁掉 发生故障
+
+invoke --> 调用 祈求 parentheses --> 圆括号 duplicating --> 复制 declaration --> 声明
+
+trivial --> 琐碎  微不足道 concatenation --> 串联 拼接 explicitly --> 明确的 novice --> 新手
+
+clause --> 从句 omitted --> 省略 shorthand --> 缩写 简写 compositionality --> 组成性
+
+refute --> 反驳 metaphor --> 隐喻
+
+### <font color='cornflowerblue'>Unfamiliar Information</font>
+
+numeric encodings 数值编码
+
+chromo 色度 
+
+hue 色调
+
+looping constructs 循环构造
+
+case sensitive 区分大小写
+
+curly braces 大括号
+
+pseudocode 伪代码
+
+robust 鲁棒
+
+iterative 迭代
+
+### <font color='cornflowerblue'>A guidance on what we need to do fix the problem</font>
+
+1. Work Example By Hand
+2. Write Down What You Did
+3. Find Patterns
+4. Check By Hand
+5. Translate To Code
+6. Run Test Cases
+7. Debug Failed Test Cases
+
+
+
+### <font color='cornflowerblue'>Semantics</font>
+
+​		1.Execution goes into the method
+
+​		2.Do whatever code is there
+
+​		3.The method returns an answer back 
+
+​		4.Method call evaluates to the value
+
+​		5.Execution resumes after the method call
+
+​		
+
+## **<font color='cornflowerblue'>Code Exercise Website</font>**
+
+[Build Software Applications (dukelearntoprogram.com)](https://www.dukelearntoprogram.com//course1/example/index.php)
+
+
+
+
+
+## <font color='cornflowerblue'>**Exercise  - Sum of the RGB values for a Pixel**</font>
+
+
+
+Write a function named **sumPixel** that calculates and returns the sum of the red, blue and green values of a pixel. The function **sumPixel** has three parameters, **namefile**, which is a string that is the name of an image file, and **xpos** and **ypos** that are numbers representing the x and y coordinates of the pixel location. Since this function is returning a value, it should NOT have a print statement in the function, and it should have a return statement. 
+
+Consider the image drewgreen.png. The pixel at location (250,500) has red component 102, green component 90 and blue component 80. The call sumPixel("drewgreen.png", 250, 500) should return 102+90+80 = 272. The pixel at location (10,10) has red component 1, green component 255 and blue component 0. The call sumPixel("drewgreen.png", 10, 10) should return 1 + 255 + 0 = 256.
+
+The function has been started below for you. 
+
+```javascript
+// write your code here
+function sumPixel(nameOfImage, xpos, ypos) {
+// missing code
+var img = new SimpleImage(nameOfImage);
+var red = img.getRed(xpos,ypos);
+var blue = img.getBlue(xpos,ypos);
+var green = img.getGreen(xpos,ypos);
+return red + blue + green
+}
+var answer = sumPixel("drewgreen.png", 250, 500);
+print(answer);
+answer = sumPixel("drewgreen.png",10, 10);
+print(answer);
+```
+
+​	
+
+## <font color='cornflowerblue'>Example:  for loop</font>
+
+```javascript
+for (var pixel of img.value())
+{
+	var newG = 255 - pixel.getGreen();
+	pixel.setGreen(newG);	
+}
+```
+
+
+
+# <font color='cornflowerblue'>Exercise ：for loop</font>
+
+A PDF copy of all of this module's Try It exercises for JavaScript can be found in the **Resources** tab. Also be sure to refer to the JavaScript documentation we provide for this course (http://www.dukelearntoprogram.com/course1/doc/), also linked in the **Resources** tab.
+
+Make a yellow square that is 200 pixels wide and 200 pixels high, like this:
+
+
+
+![img](duke：Algorithms and Programming Concepts.assets/oxxwJ3roEeaTyQp_BD0w6w_d8a7192e0838c0b31cb366e247a7d522_71-20_3_2_TryIt.png)
+
+Think through the steps you will need to do to solve this problem. You will need to:
+
+\1. Create a new image, specifying that the new image is 200 pixels wide and 200 pixels high.
+
+\2. Then, for each pixel in that image:
+
+​			Make the pixel yellow.
+
+​		
+
+```javascript
+var img = new SimpleImage(200,200)
+print(img)
+for (var pixel of img.values())
+{
+    new_Red = 255 - pixel.getRed();
+    new_Green = 255 - pixel.getGreen();
+    pixel.setGreen(new_Red);
+    pixel.setRed(new_Green);
+}
+print(img)
+```
+
+### 
+
+## <font color='cornflowerblue'>**Turn the chapel red.**</font>
+
+Write code that starts with the image “chapel.png” shown below on the left and turns the red part of every pixel to the highest red value possible, resulting in the image shown on the right.
+
+
+
+![img](https://d3c33hcgiwev3.cloudfront.net/imageAssetProxy.v1/FIjLP7q0Rj-Iyz-6tPY_9Q_1065ebf372874c9b9aa909d67b2a550e_chapelTurnRed.png?expiry=1672790400000&hmac=E6P6azP_5b0sZkMmXz8Cu9uNj-Jt3-Zl37yHk9VrvnQ)
+
+```javascript
+var image = new SimpleImage("chapel.png");
+
+for( var pixel of image.values())
+{ 
+    if(pixel.getRed()<=255);
+    {
+        new_red = 255;
+        pixel.setRed(new_red);
+    }
+    
+}
+
+print(image);
+```
+
+
+
+## <font color='cornflowerblue'>**Remove all the red**</font>
+
+
+ Write code that starts with the image “chapel.png” shown below on the left and removes all the red, resulting in the image shown on the right. You will notice that in the resulting image you will mostly see blue and green colors.
+
+
+
+
+
+![img](duke：Algorithms and Programming Concepts.assets/WVAWujiLQ2CQFro4iyNgEw_3ae809d7f77f435fa2631b0306020d1a_chapelTurnNoRed.png)
+
+```javascript
+var image = new SimpleImage("chapel.png");
+
+for( var pixel of image.values())
+{ 
+    if(pixel.getRed()<=255);
+    {
+        new_red = 0;
+        pixel.setRed(new_red);
+    }
+    
+}
+
+print(image);
+```
+
+## <font color='cornflowerblue'>**Add Thick Black Line to Bottom of Owen**</font>
+
+Write code that starts with the image “astrachan.jpg” shown below on the left and replaces the bottom ten rows with black pixels, resulting in the image shown on the right. Note that the color black has a red value of 0, a green value of 0 and a blue value of 0. Also note that the pixel in the top left corner has x-value 0 and y-value 0.
+
+
+
+
+
+![img](duke：Algorithms and Programming Concepts.assets/6GHq97J_TIqh6veyfzyK3Q_bf6ffb938906460eac33aa23443c8664_astrachanAddBlackLine.png)
+
+```javascript
+// write your code here
+var image = new SimpleImage("astrachan.jpg");
+h = image.getHeight();
+w = image.getWidth();
+print(h);
+print(w);
+
+a = 0;
+
+for(var pixel of image.values())
+{
+   x = h * w;
+   a = a + 1;
+   if(x-w*10 <=a )
+   {
+       pixel.setRed(0);
+       pixel.setGreen(0);
+       pixel.setBlue(0);
+   }
+  
+}
+// missing code
+
+print(image);
+```
+
+```javascript
+var someImage = new SimpleImage("astrachan.jpg");
+var h = someImage.getHeight();
+for(var pixel of someImage.values())
+{
+    if(pixel.getY() >= h-10)
+    {
+        pixel.setRed(0);
+        pixel.setGreen(0);
+        pixel.setBlue(0);
+    }
+}
+
+print(someImage);
+```
+
+
+
+## **Green square in top left corner**
+
+Write code that starts with the image “chapel.png” shown below on the left, and replaces the top left corner with an all green square of size 50 by 50, resulting in the image on the right below.
+
+
+
+![img](duke：Algorithms and Programming Concepts.assets/IwB2vkS3SWuAdr5Et5lrgA_6118176763b44fa2bb992e036666e79d_chapelAddLineBottomGreenSquare.png)
+
+```
+var image = new SimpleImage("chapel.png");
+h = image.getHeight();
+w = image.getWidth();
+for(var pixel of image.values())
+{
+    if(pixel.getX() <= 50)
+    {
+        if(pixel.getY()<=50)
+        {
+        pixel.setGreen(255);
+        pixel.setRed(0);
+        pixel.setBlue(0);
+        }
+    }
+}
+print(image);
+```
+
+
+
+# <font color='cornflowerblue'>Exercise ：Modifying Images</font>
+
+## 	Part 1
+
+  Write a JavaScript program that modifies an image by putting three vertical stripes on it - a red stripe on the left one third, a green stripe in the middle, and a blue stripe on the right one third. For example, if your program ran on Drew’s picture shown on the left, the resulting image would have red, green and blue vertical stripes as shown in the image on the right.
+
+
+
+![img](https://d3c33hcgiwev3.cloudfront.net/imageAssetProxy.v1/UShuy3g2EeaxYA6oVw19Xw_32f9f25b846e45177deea2d3ca0dccbd_71-20_3_2_Q6.png?expiry=1672790400000&hmac=pfTZQxp6czx4xfB5th3kqO_G0sESmjpfPmItJQ86t18)
+
+The red stripe is made by changing the **red component** of all the pixels in the **left vertical third** to 255, while leaving the green and blue components as their values in the original image. The green and blue stripes are made similarly, but instead of modifying the red component of each pixel in the correct part of the image you will modify the green or blue component. 
+
+```javascript
+var image = new SimpleImage("hilton.jpg");
+h = image.getHeight();
+w = image.getWidth();
+print(h);
+print(w);
+
+for(var pixel of image.values())
+{
+    if(pixel.getX()< w/3)
+    {
+        pixel.setRed(255);
+    }
+    else if(w/3 <=pixel.getX() , pixel.getX()<= 2*w/3 )
+    {
+        pixel.setGreen(255);
+    }
+    if(pixel.getX() > 2*w/3)
+    {
+        pixel.setBlue(255);
+    }
+}
+print(image);
+```
+
+## Part 2
+
+Write a JavaScript function named swapRedGreen with one parameter pixel (representing a single pixel). This function should swap the red and green values of the pixel. For example, if you have a pixel with red = 255, green = 100, blue = 150, after calling swapRedGreen on that pixel its new RGB values would be red = 100, green = 255, blue = 150. 
+
+To test your function, you should choose an image and apply the swapRedGreen function to every pixel in the image. The choice of your image is important. For some images you may not notice any change. What would happen if you used a completely black image, or a completely white image? What about an image with lots of red and not a lot of green? Think about what type of image you should use for testing your function. After choosing an image and applying the swapRedGreen function to every pixel in the image, make sure you print the resulting image so you can see whether your function worked correctly.  
+
+```javascript
+function swapRedGreen(ImageName)
+{
+        for(var pixel of ImageName.values())
+        {
+        Red = pixel.getRed();
+        Green = pixel.getGreen();
+        new_red = Green;
+        new_green = Red;
+        pixel.setRed(new_red);
+        pixel.setGreen(new_green);
+        }
+        return ImageName ;
+}
+var image = new SimpleImage("hilton.jpg");
+print(image);
+h = image.getHeight();
+w = image.getWidth();
+print(h);
+print(w);
+var result = swapRedGreen(image);
+print(result);
+
+```
+
+![image-20230104225349927](duke：Algorithms and Programming Concepts.assets/image-20230104225349927.png)![img](https://www.dukelearntoprogram.com//course1/example/hilton.jpg)
+
+
+
+## Part 3
+
+  Write code to change the Duke blue devil (the image below on the left) to be yellow (as in the image below on the right). 
+
+
+
+![img](duke：Algorithms and Programming Concepts.assets/ZdwBFHg3EeaxYA6oVw19Xw_0291b8c9d1a5e677c82d4033bdd38bdd_71-20_3_2_Q8-1.png)
+
+  Start by working this smaller example by hand. You want to turn the image below on the left into the image below on the right. What are the steps you will need to take? Once you have worked through this example by hand to determine the steps you will need to take, you can translate your algorithm into code.  
+
+```javascript
+function swapRedGreen(ImageName)
+{
+        for(var pixel of ImageName.values())
+        {
+            if(pixel.getRed() ==0,pixel.getGreen()==51,pixel.getBlue()==227)
+            {
+                pixel.setRed(255);
+                pixel.setGreen(255);
+                pixel.setBlue(0);
+            }
+        }
+        return ImageName ;
+}
+var image = new SimpleImage("duke_blue_devil.png");
+print(image);
+h = image.getHeight();
+w = image.getWidth();
+print(h);
+print(w);
+var result = swapRedGreen(image);
+print(result);
+```
+
+
+
+# Exercise: Advanced Modifying Images
+
+
+
+## 	Part 1 
+
+Write the green screen algorithm you saw in the lecture video yourself. To make sure you really understand the code that was written in the video, you should write the code yourself without looking at the video unless you get stuck and need to refer back to it for a hint. 
+
+```javascript
+var fgimage = new SimpleImage("drewRobert.png");
+var bgimage = new SimpleImage("dinos.png");
+h = bgimage.getHeight();
+w = bgimage.getWidth();
+var output = new SimpleImage(w,h);
+for(var pixel of fgimage.values())
+{
+    var x=pixel.getX();
+    var y=pixel.getY();
+    
+    if(pixel.getGreen() > pixel.getRed() + pixel.getBlue())
+    {
+   
+        var bgpixel = bgimage.getPixel(x,y);
+         output.setPixel(x,y,bgpixel);
+    }
+    else
+    {
+        output.setPixel(x,y,pixel);
+    }
+}
+print(output);
+```
+
+![下载](duke：Algorithms and Programming Concepts.assets/下载.png)
+
+## Part 2 
+
+  Your friend is trying to write a program that draws a square 200 pixels by 200 pixels and that looks like this square with colors red (red value 255), green (green value 255), blue (blue value 255) and magenta (red value 255 and blue value 255). All other RGB values are set to 0.
+
+
+
+![img](duke：Algorithms and Programming Concepts.assets/s61ZdXg5EealOA67wFuqoQ_a769b3559e3d4b519ea351eb90b50b49_71-20_3_3_PE4-1.png)
+
+  Your friend has written code to try to solve this problem, however their code has a bug, and produces this image: 
+
+
+
+![img](duke：Algorithms and Programming Concepts.assets/C4Jl5Xg6Eead-BJkoDOYOw_fc12cfdc04f7cb30bacc61725217bdd5_71-20_3_3_PE4-2.png)
+
+  Here is their code: 
+
+```javascript
+var img = new SimpleImage(200,200);
+for (var px of img.values()){
+  var x = px.getX();
+  var y = px.getY();
+  if (x < img.getWidth()/2){
+    px.setRed(255);
+  }
+  if (y>img.getHeight()/2){
+    px.setBlue(255);
+  }
+  else {
+    px.setGreen(255);
+  }
+}
+print (img);
+```
+
+  Your task is to find and fix the bug. Use what you have learned about applying the scientific method to debugging: gather information, apply your knowledge about images and programming, form a hypothesis, test your hypothesis, and finally, change the code to fix the problem.
+
+```javascript
+var img = new SimpleImage(200,200);
+for (var px of img.values()){
+  var x = px.getX();
+  var y = px.getY();
+  if(x < img.getWidth()/2)
+  {
+      px.setRed(255);
+      
+  }
+  if(y > img.getHeight()/2)
+  {
+      px.setBlue(255);
+  }
+  else if(y < img.getHeight()/2 && x> img.getWidth()/2 )
+  {
+      px.setGreen(255);
+  }
+}
+print (img);
+```
+
+
+
+## Part 3
+
+Write a function named setBlack that has one parameter pixel (representing a single pixel) and returns pixel with its red, green, and blue components changed so that the pixel’s color is black.
+
+Now you will write another function named addBorder. This function will add a black border to an image, such as in the following example:
+
+
+
+![img](https://d3c33hcgiwev3.cloudfront.net/imageAssetProxy.v1/jDKUzng6EeamDApmnD43Fw_23c2603c153c1ce599c27bc65e1fc94e_71-20_3_3_Q7.png?expiry=1673049600000&hmac=0h-qeIs-qjdQbutObA7G6LGW6Kmj7Cmya3QLNai7gFk)
+
+On the left, we have the original image, and on the right, we have modified the image by giving it a black border that is 10 pixels thick. Note that the image size of the image with the border is the same as the original image because the border is not added around the outside of the original image, instead it covers up some of the original image.
+
+```javascript
+
+var img = new SimpleImage("smallpanda.png");
+print(img);
+h = img.getHeight();
+w = img.getWidth();
+function setBlack(pixel)
+{
+    new_red = 0;
+    new_green = 0;
+    new_blue = 0;
+    pixel.setRed(new_red);
+    pixel.setGreen(new_green);
+    pixel.setBlue(new_blue);
+    return pixel;
+}
+function addBorder(imagename)
+{
+    for (var px of imagename.values())
+    {
+        if(px.getX() < 10 || px.getX()>w-10)
+        {
+            setBlack(px);
+        }
+        if(px.getY()<10 || px.getY()>h-10)
+        {
+            setBlack(px);
+        }
+    }
+    return imagename;
+    
+}
+var result = addBorder(img);
+print (result);
+```
+
